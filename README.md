@@ -8,7 +8,14 @@ Logistic regression models (Python and R) that predict passenger survival on the
 - `src/python/` - `Dockerfile`, `requirements.txt`, `main.py`
 - `src/r/` - `Dockerfile`, `install_packages.R`, `main.R`
 
-## 1. Get the data
+## 1. Clone the repository
+
+    git clone https://github.com/karinatian96/titanic-disaster.git
+    cd titanic-disaster
+
+All commands below are run from this repository root.
+
+## 2. Get the data
 
 1. Go to https://www.kaggle.com/competitions/titanic/data (join the competition and accept the rules).
 2. Download `train.csv` and `test.csv`.
@@ -16,16 +23,12 @@ Logistic regression models (Python and R) that predict passenger survival on the
 
 The data is not included in this repo because it is ignored by `.gitignore`.
 
-## 2. Run the Python container
-
-From the repository root:
+## 3. Run the Python container
 
     docker build -t titanic-python src/python
     docker run --rm -v "$(pwd)/src/data:/app/data" titanic-python
 
-## 3. Run the R container
-
-From the repository root:
+## 4. Run the R container
 
     docker build -t titanic-r src/r
     docker run --rm -v "$(pwd)/src/data:/app/data" titanic-r
