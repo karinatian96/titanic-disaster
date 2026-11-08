@@ -40,7 +40,7 @@ print(f"Filled Fare NA with median = {fare_median}")
 print(f"Filled Embarked NA with mode = {embarked_mode}")
 print("Encoded Sex (male=0, female=1); one-hot encoded Embarked")
 print("Added feature FamilySize = SibSp + Parch + 1")
-print("Dropped Cabin, Name, Ticket (too many missing / not numeric)")
+print("Excluded Cabin, Name, Ticket from model features (too many missing / not numeric)")
 
 train_p = prepare(train)
 FEATURES = ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare",
