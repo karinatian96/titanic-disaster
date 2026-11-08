@@ -2,6 +2,13 @@
 
 Logistic regression models (Python and R) that predict passenger survival on the Titanic. Each model runs in its own Docker container.
 
+## Prerequisites
+
+- Git
+- Docker Desktop, installed and running (https://www.docker.com/products/docker-desktop/)
+
+You do not need Python or R installed locally. Everything runs inside Docker.
+
 ## Project structure
 
 - `src/data/` - put `train.csv` and `test.csv` here (not tracked by git)
@@ -39,7 +46,8 @@ The first R build may take several minutes because packages are compiled from so
 
 - Load `train.csv` and report missing values
 - Fill missing Age/Fare with the median and Embarked with the mode
-- Encode Sex and Embarked, add FamilySize, drop Cabin/Name/Ticket
+- Encode Sex and Embarked, add FamilySize
+- Exclude Cabin, Name, and Ticket from model features
 - Train a logistic regression model and report training accuracy
 - Predict survival on `test.csv`
 - `test.csv` has no `Survived` labels, so accuracy is reported on a 20% hold-out split of `train.csv`

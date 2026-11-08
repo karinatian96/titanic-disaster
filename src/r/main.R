@@ -20,7 +20,7 @@ cat("Filled Fare NA with median =", fare_med, "\n")
 cat("Filled Embarked NA with mode =", emb_mode, "\n")
 cat("Converted Sex and Embarked to factors\n")
 cat("Added FamilySize = SibSp + Parch + 1\n")
-cat("Dropped Cabin, Name, Ticket (too many missing / not numeric)\n")
+cat("Excluded Cabin, Name, Ticket from model features (too many missing / not numeric)\n")
 
 prepare <- function(df) {
   df %>%
